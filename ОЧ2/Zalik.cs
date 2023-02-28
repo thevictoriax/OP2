@@ -12,6 +12,15 @@ namespace ОЧ2
         private string teacher;
         private double grade;
 
+
+        public Zalik()
+        {
+            subject = string.Empty;
+            teacher = string.Empty; 
+            grade = 0.0;
+        }
+           
+
         public Zalik(string _subject, string _teacher, double _grade) 
         {
             grade = _grade;
@@ -19,5 +28,16 @@ namespace ОЧ2
             teacher = _teacher;
         }
 
+        public override string ToString()
+        {
+            if (grade>50)
+            {
+                return $"{subject} , {teacher} , {grade} - зараховано ";
+            }
+            else
+            {
+                return $"{subject} , {teacher} , {grade} - НЕ зараховано ";
+            }
+        }
     }
 }

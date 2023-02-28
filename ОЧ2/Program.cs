@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using System.Runtime.InteropServices;
+using ОЧ2;
+
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+Zalik a = new Zalik("OP", "Ярошко", 51);
+Console.WriteLine(a.ToString());
