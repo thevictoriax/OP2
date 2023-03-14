@@ -8,9 +8,17 @@ namespace ОЧ2
 {
     public class Zalik: IComparable<Zalik>
     {
+        private int _grade;
         public string Subject { get; protected set; }
         public string Teacher { get; protected set; }
-        public int Grade { get; protected set; }
+        public int Grade { 
+            get {
+                return _grade;
+            } 
+            protected set {
+                _grade = value >= 100 ? 100 : value;
+            }
+        }
 
 
         public Zalik()
@@ -21,11 +29,11 @@ namespace ОЧ2
         }
            
 
-        public Zalik(string _subject, string _teacher, int _grade) 
+        public Zalik(string subject, string teacher, int grade) 
         {
-            Grade = _grade >= 100 ? 100 : _grade;
-            Subject = _subject;
-            Teacher = _teacher;
+            Grade = grade;
+            Subject = subject;
+            Teacher = teacher;
         }
 
         public int CompareTo(Zalik other)
